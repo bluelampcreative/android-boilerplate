@@ -1,7 +1,12 @@
 #!/usr/bin/env node
 
 const chalk = require('chalk'); 
-const args = process.argv
+const clear = require('clear');
+const figlet = require('figlet'); 
+const inquirer = require('./lib/inquirer');
+const CLI = require('clui');
+const Spinner = CLI.Spinner;
+
 
 const help = `
     Welcome to Android Boilerplate! 
@@ -20,15 +25,50 @@ const help = `
         - redux
         - mvp
 `
+clear()
+
+console.log(
+    chalk.yellow(
+        figlet.textSync('ABP', {horizontalLayout: 'full'})
+    )
+)
+console.log(
+    chalk.blue('Android boilerplate CLI')
+)
+
+const run = async () => {
+  const projectName = await inquirer.askProjectName();
+  createProject(projectName)
+}
+
+//this kicks it off
+run();
+
+function createProject(projectName) {
+    const status = new Spinner('Creating your project')
+    status.start()
+
+    setTimeout(() => {
+        try {
+            //pause here while project is created
+            console.log(`\n The ${projectName.archType} Android project ${projectName.name} has been created`)
+        } catch(exception) {
+            console.log(exception)
+        } finally {
+            status.stop()
+        }
+    }, 3000)
+}
 
 function logError(error) {
     console.log(chalk.red(error))
 } 
-function acceptCommand() {
-    switch(args[2]){
+
+function acceptCommand(command, option) {
+    switch(command){
         case 'new':
             console.log(`create a new template`)
-            acceptOptions()
+            acceptOption(option)
             break; 
         default:
             logError('Please enter an acceptable command')
@@ -36,8 +76,8 @@ function acceptCommand() {
     }
 }
 
-function acceptOptions() {
-    switch(args[3]) {
+function acceptOption(options) {
+    switch(option) {
         case 'mvvm':
             console.log(`mvvm`)
             break; 
@@ -57,11 +97,4 @@ function acceptOptions() {
             logError('Please enter an acceptable option')
             console.log(help)
     }
-}
-
-if(args.length > 4) {
-    logError(`ERROR : abp accepts one command and an options argument.  Please use the see the usage instructions`)
-    console.log(help)
-} else {
-    acceptCommand()
 }
