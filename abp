@@ -1,0 +1,67 @@
+#!/usr/bin/env node
+
+const chalk = require('chalk'); 
+const args = process.argv
+
+const help = `
+    Welcome to Android Boilerplate! 
+    
+    usage:
+        adb <command> <option>
+    
+    Command:
+        - new:      (create a new project)
+        ...
+
+    Options:
+        - mvvm
+        - mvvm-cca (MVVM with Clean Code Arcitecture)
+        - mvi
+        - redux
+        - mvp
+`
+
+function logError(error) {
+    console.log(chalk.red(error))
+} 
+function acceptCommand() {
+    switch(args[2]){
+        case 'new':
+            console.log(`create a new template`)
+            acceptOptions()
+            break; 
+        default:
+            logError('Please enter an acceptable command')
+            console.log(help)
+    }
+}
+
+function acceptOptions() {
+    switch(args[3]) {
+        case 'mvvm':
+            console.log(`mvvm`)
+            break; 
+        case 'mvvm-cca':
+            console.log('mvvm-cca')
+            break;
+        case 'mvi':
+            console.log('mvi')
+            break;
+        case 'redux':
+            console.log('redux')
+            break;
+        case 'mvp':
+            console.log('mvp')
+            break;
+        default:
+            logError('Please enter an acceptable option')
+            console.log(help)
+    }
+}
+
+if(args.length > 4) {
+    logError(`ERROR : abp accepts one command and an options argument.  Please use the see the usage instructions`)
+    console.log(help)
+} else {
+    acceptCommand()
+}
