@@ -10,7 +10,7 @@ These days there are fewer and fewer reasons to rely primarily on Activities as 
 Using the ```abp``` command, developers can easily create the boilerplate for chosen patterns. This makes writing new features far quicker, easier and less error-prone. 
 
 ## Contents:
- - [MVVM](#mvvm):bulb:*In Progress*:bulb:
+ - [MVVM](#mvvm)
  - *MVVM with Clean Code Archetecture*
  - *MVI*
  - *REDUX*
