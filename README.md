@@ -5,6 +5,9 @@ An opinionated CLI tool for generating and developing Android Projects using a v
 ### Kotlin
 No, you don't need to use Java.
 
+### Koin
+A nicer way to inject dependencies
+
 ### Single Activity First
 These days there are fewer and fewer reasons to rely primarily on Activities as the container for each view. With the advent of Jetpack, most of the headaches that Android developers have experienced in the past simply no longer need exist. Therefore all of ABP's templates assume a Single Activity Paradigm upon creation. Of course there is no enforcement of this pattern after the project ius generated but we encourage some thoughtfullness around why additional activities would be needed.
 
