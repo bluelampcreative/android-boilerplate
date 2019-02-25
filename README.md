@@ -7,10 +7,10 @@ Using the ```abp``` command, developers can easily create the boilerplate for ch
 
 ## Contents:
  - [MVVM](#mvvm):bulb:*In Progress*:bulb:
- - *[MVVM with Clean Code Archetecture](#mvvm-cca)*
- - *[MVI](#mvi)*
- - *[REDUX](#redux)*
- - *[MVP](#mvp)*
+ - *MVVM with Clean Code Archetecture*
+ - *MVI*
+ - *REDUX*
+ - *MVP*
  
  
  
