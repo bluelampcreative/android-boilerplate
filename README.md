@@ -6,7 +6,7 @@ An opinionated CLI tool for generating Android Projects that implements a variet
 Using the ```abp``` command, developers can easily create the boilerplate for chosen patterns. This makes writing new features far quicker, easier and less error-prone. 
 
 ## Contents:
- - [MVVM](#mvvm)
+ - [MVVM](#mvvm):sparkles: *In Progress*
  - [MVVM with Clean Code Archetecture](#mvvm-cca)
  - [MVI](#mvi)
  - [REDUX](#redux)
@@ -17,6 +17,9 @@ Using the ```abp``` command, developers can easily create the boilerplate for ch
  
  ## MVVM
  Model View View-Model
+ 
+ :construction::hammer: In Progress :hammer::construction:
+ 
  
  ## MVVM CCA
  Model View View-Model with a Clean Code Architecture
