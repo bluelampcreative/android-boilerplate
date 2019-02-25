@@ -7,24 +7,6 @@ const inquirer = require('./lib/inquirer');
 const CLI = require('clui');
 const Spinner = CLI.Spinner;
 
-
-const help = `
-    Welcome to Android Boilerplate! 
-    
-    usage:
-        adb <command> <option>
-    
-    Command:
-        - new:      (create a new project)
-        ...
-
-    Options:
-        - mvvm
-        - mvvm-cca (MVVM with Clean Code Arcitecture)
-        - mvi
-        - redux
-        - mvp
-`
 clear()
 
 console.log(
@@ -37,21 +19,21 @@ console.log(
 )
 
 const run = async () => {
-  const projectName = await inquirer.askProjectName();
-  createProject(projectName)
+  const projectInfo = await inquirer.askProjectName();
+  createProject(projectInfo)
 }
 
 //this kicks it off
 run();
 
-function createProject(projectName) {
+function createProject(projectInfo) {
     const status = new Spinner('Creating your project')
     status.start()
 
     setTimeout(() => {
         try {
             //pause here while project is created
-            console.log(`\n The ${projectName.archType} Android project ${projectName.name} has been created`)
+            console.log(`\n The ${projectInfo.archType} Android project ${chalk.yellow(projectInfo.projectName)} has been created`)
         } catch(exception) {
             console.log(exception)
         } finally {
