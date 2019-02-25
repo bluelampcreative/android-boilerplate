@@ -1,5 +1,5 @@
 # Android Boilerplate CLI
-An opinionated CLI tool for generating and developing Android Projects implementing a variety of established architectures and coding patterns.
+An opinionated CLI tool for generating and developing Android Projects using a variety of established architectures and coding patterns.
 
 
 ## Tools for development
