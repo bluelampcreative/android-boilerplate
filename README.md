@@ -1,4 +1,4 @@
-# Android Boilerplate CLI
+# Android Boilerplate CLI `Really needs a better name`
 An opinionated CLI tool for generating and developing Android Projects using a variety of established architectures and coding patterns.
 
 :construction: `Work in Progress` :construction:
